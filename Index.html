@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="stylesheet" href="index.css">
+<script>
+var fruitList=[]; 
+function MyChange()
+{
+  var mydiv1=  document.getElementById("div1");
+  mydiv1.style.display="none";
+
+  var mydiv2= document.getElementById("div2")
+  mydiv2.style.display="";
+    var myulcontro=  document.getElementById("Myul2");
+  myulcontro.innerHTML=""; 
+
+  for(i=0;i<fruitList.length;i++)
+   {
+      //alert(fruits[i]);
+      var tempres=fruitList[i]; 
+    myulcontro.innerHTML+="<li>"+tempres+"</li>";
+   }
+}
+function ShowFruit()
+{
+  var myulcontro=  document.getElementById("Myul");
+  myulcontro.innerHTML="";
+  for(i=0;i<fruitList.length;i++)
+   {
+      //alert(fruits[i]);
+    myulcontro.innerHTML+="<li>"+fruitList[i]+"</li>";
+   }
+   myulcontro.innerHTML+="  <input type='button' value='change' onclick='MyChange()'></input>"
+}
+
+function Myfunc()
+{ 
+   for(i=0;i<3;i++)
+   {
+       fruitList.push(prompt("hi say fruit"));
+   }
+ ShowFruit();
+}
+</script>
+</head>
+<body>
+<h1>Swap first and Last letters</h1>
+<input type="button" value="start" onclick="Myfunc()">
+</input>
+<div class="MyDiv" id="div1">
+<ul id="Myul"></ul>
+</div>
+<div class="MyDiv2" id="div2" style="display:none">
+<ul id="Myul2"></ul>
+</div>
+<body>
+</html>
